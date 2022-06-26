@@ -12,10 +12,10 @@ const Login = () => {
                 <img src={logo} />
                 <h1>NeatBeats</h1>
                 <Switch>
-                    <Route path="/sign-in">
+                    <Route path="/access/sign-in">
                         <SignInForm />
                     </Route>
-                    <Route path="/register">
+                    <Route path="/access/register">
                         <RegisterForm />
                     </Route>
                 </Switch>

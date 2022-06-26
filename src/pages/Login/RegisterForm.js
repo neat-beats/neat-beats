@@ -37,7 +37,7 @@ const RegisterForm = () => {
                 </label>
                 <input type="submit" value="Register" />
             </form>
-            <p>Already have an account? <Link to="/sign-in" className="Link">Sign in here</Link></p>
+            <p>Already have an account? <Link to="/access/sign-in" className="Link">Sign in here</Link></p>
         </div>
         
     );
