@@ -1,39 +1,64 @@
-import { useState } from "react";
+import { useRef, useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext, users } from "../../sharedData";
 
 const RegisterForm = () => {
+    const [user, setUser] = useContext(UserContext);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [vpassword, setVPassword] = useState("");
 
+    const usernameInput = useRef();
+    const passwordInput = useRef();
+    const vpasswordInput = useRef();
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert("hi");
+        
+        if (username === "") {
+            usernameInput.current.setCustomValidity("You must provide a username.");
+            usernameInput.current.reportValidity();
+        } else if (users.hasOwnProperty(username)) {
+            usernameInput.current.setCustomValidity("This username is already in use.");
+            usernameInput.current.reportValidity();
+        } else if (password === "") {
+            passwordInput.current.setCustomValidity("You must provide a password.");
+            passwordInput.current.reportValidity();
+        } else if (vpassword !== password) {
+            vpasswordInput.current.setCustomValidity("Does not match the given password.");
+            vpasswordInput.current.reportValidity();
+        } else {
+            users[username] = {"password": password};
+            setUser(username);
+        }
     }
 
     const handleUsernameChange = (event) => {
         setUsername(event.target.value);
+        usernameInput.current.setCustomValidity("");
     }
 
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
+        passwordInput.current.setCustomValidity("");
     }
 
     const handleVPasswordChange = (event) => {
         setVPassword(event.target.value);
+        vpasswordInput.current.setCustomValidity("");
     }
 
     return (
         <div className="registerform">
             <form onSubmit={handleSubmit}>
                 <label>New Username:<br />
-                    <input required type="text" name="username" placeholder="username123" onChange={handleUsernameChange} />
+                    <input ref={usernameInput} type="text" name="username" placeholder="username123" onChange={handleUsernameChange} />
                 </label>
                 <label>New Password:<br />
-                    <input required type="password" name="password" placeholder="••••••••••••••••••" onChange={handlePasswordChange} />
+                    <input ref={passwordInput} type="password" name="password" placeholder="••••••••••••••••••" onChange={handlePasswordChange} />
                 </label>
                 <label>Verify New Password:<br />
-                    <input required type="password" name="vpassword" placeholder="••••••••••••••••••" onChange={handleVPasswordChange} />
+                    <input ref={vpasswordInput} type="password" name="vpassword" placeholder="••••••••••••••••••" onChange={handleVPasswordChange} />
                 </label>
                 <input type="submit" value="Register" />
             </form>

@@ -1,10 +1,14 @@
 import './Navbar.css';
 
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
 import Search from "./components/Search"
 import logo from "./images/logo.png";
+import { UserContext } from './sharedData';
 
 const Navbar = () => {
+    const [user, setUser] = useContext(UserContext);
+
     const handleSubmit = (search) => {
         alert(search);
     }
@@ -36,7 +40,7 @@ const Navbar = () => {
                 </li>
 
                 <li className="right">
-                    <Link to="/thing" className="link">Thing</Link>
+                    <Link onClick={() => setUser("")} className="link">Sign Out</Link>
                 </li>
             </ul>
         </nav>

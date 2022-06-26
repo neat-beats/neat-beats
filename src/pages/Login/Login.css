@@ -58,6 +58,8 @@
     margin-top: 35px;
     margin-right: 23px;
     font-size: inherit;
+    position: relative;
+    z-index: 1;
 }
 
 .login p {
@@ -68,8 +70,5 @@
     font-size: 12px;
     text-align: center;
     align-self: flex-end;
-}
-
-.login p .Link {
-    display: inline;
+    z-index: 0;
 }
