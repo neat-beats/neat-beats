@@ -4,48 +4,48 @@ nav {
     width: 100%;
 }
 
-ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-li {
+nav li {
     font-size: 20px;
 }
 
-.left {
+nav .left {
     float: left;
 }
 
-.right {
+nav .right {
     float: right;
 }
 
-.search {
+nav .left.search {
     padding: 13px 0 0 60px;
 }
 
-.link {
+nav .link {
     text-decoration: none;
     color: black;
     display: block;
 }
 
-.left .link {
+nav .left .link {
     padding: 15px 0 15px 60px;
 }
 
-.right .link {
+nav .right .link {
     padding: 15px 60px 15px 0;
 }
 
-#logo {
+nav #logo {
     float: left;
     padding: 10px 0 10px 60px;
 }
 
-img {
+nav img {
     height: 40px;
     width: 40px;
     object-fit: contain;

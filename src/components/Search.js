@@ -11,7 +11,7 @@ const Search = ({ submit, placeholder, style }) => {
     }
 
     return (
-        <input 
+        <input className="search"
             type="text" placeholder={placeholder} style={style}
             onChange={(e) => setSearch(e.target.value)}
             onKeyPress={handleSubmit}

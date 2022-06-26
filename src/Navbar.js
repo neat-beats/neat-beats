@@ -21,7 +21,8 @@ const Navbar = () => {
                 </li>
                 <li className="left search">
                     <Search submit={handleSubmit} placeholder="Public Search..."
-                        style={{height:"25px", width:"200px", borderRadius: "25px", paddingLeft: "10px", border: "none"}}
+                        style={{fontSize: "15px", height:"25px", width:"200px", borderRadius: "25px", 
+                        paddingLeft: "10px", marginTop: "5px", border: "none"}}
                     />
                 </li>
                 <li className="left">
