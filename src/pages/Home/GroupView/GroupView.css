@@ -1,0 +1,7 @@
+.groupview {
+    margin: 0;
+    padding: 0 15px 0 15px;
+    height: calc(100vh - 60px);
+    width: calc(25% - 30px);
+    background-color: rgb(200, 200, 200);
+}

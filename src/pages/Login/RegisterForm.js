@@ -1,6 +1,6 @@
 import { useRef, useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserContext, users } from "../../sharedData";
+import { UserContext, users, groups } from "../../sharedData";
 
 const RegisterForm = () => {
     const [user, setUser] = useContext(UserContext);
@@ -28,7 +28,9 @@ const RegisterForm = () => {
             vpasswordInput.current.setCustomValidity("Does not match the given password.");
             vpasswordInput.current.reportValidity();
         } else {
-            users[username] = {"password": password};
+            const newGroupID = Date.now();
+            users[username] = {"password": password, "groups": [newGroupID]};
+            groups[newGroupID] = {"name": username, "members": [username], "songs": []};
             setUser(username);
         }
     }

@@ -1,0 +1,46 @@
+.groupselect {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    user-select: none;
+}
+
+.groupselect #opener {
+    font-size: 25px;
+}
+
+.groupselect #opener:hover {
+    cursor: pointer;
+}
+
+.groupselect #selector {
+    position: absolute;
+    margin-top: 15px;
+    height: 300px;
+    width: calc(25% - 30px);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    overflow-y: scroll;
+}
+
+.groupselect #selector ul {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
+}
+
+.groupselect #selector li {
+    font-size: 20px;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+.groupselect #selector li:hover {
+    cursor: pointer;
+}
+
+.groupselect #selector li b:hover {
+    cursor: default;
+}
