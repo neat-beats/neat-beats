@@ -25,12 +25,9 @@ const Navbar = () => {
                 </li>
                 <li className="left search">
                     <Search submit={handleSubmit} placeholder="Public Search..."
-                        style={{fontSize: "15px", height:"25px", width:"200px", borderRadius: "25px", 
-                        paddingLeft: "10px", marginTop: "5px", border: "none"}}
+                        style={{fontSize: "17px", height:"35px", width:"200px", borderRadius: "25px", 
+                        paddingLeft: "10px", border: "none"}}
                     />
-                </li>
-                <li className="left">
-                    <Link to="/explore" className="link">Explore</Link>
                 </li>
                 <li className="left">
                     <Link to="/message" className="link">Message</Link>

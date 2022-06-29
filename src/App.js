@@ -22,9 +22,6 @@ export default function App() {
               <Route exact path="/">
                 <Home />
               </Route>
-              <Route path="/explore">
-                <Explore />
-              </Route>
               <Route path="/message">
                 <Message />
               </Route>
