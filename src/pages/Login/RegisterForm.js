@@ -30,7 +30,7 @@ const RegisterForm = () => {
         } else {
             const newGroupID = Date.now();
             users[username] = {"password": password, "groups": [newGroupID]};
-            groups[newGroupID] = {"name": username, "members": [username], "songs": []};
+            groups[newGroupID] = {"name": username, "members": [username], "songs": [], "isPrivate": false};
             setUser(username);
         }
     }

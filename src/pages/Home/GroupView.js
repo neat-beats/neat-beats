@@ -19,12 +19,17 @@ const GroupView = () => {
             }
     }
 
+    const handleSongPick = (songPick) => {
+        alert("Picked song " + songPick + " (not implemented yet)");
+    }
+
     useEffect(() => {
         handleSearch("");
         allSongs = groups[group]["songs"];
         setGroupSongs(allSongs);
     }, [group]);
 
+    var songKey = 0;
     return (
         <div className="groupview">
             <GroupContext.Provider value={[group, setGroup]}>
@@ -39,8 +44,8 @@ const GroupView = () => {
                     paddingLeft: "10px",
                     fontSize: "20px",
                 }} />
-                <ul>
-                    {groupSongs.map((s) => <li><p>{songs[s]["name"]}</p></li>)}
+                <ul id="songlist">
+                    {groupSongs.map((s) => <li key={songKey++} onClick={() => handleSongPick(s)}>{songs[s]["name"]}</li>)}
                 </ul>
             </GroupContext.Provider>
         </div>
