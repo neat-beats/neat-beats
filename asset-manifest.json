@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/neat-beats/static/css/main.a1f128cd.css",
+    "main.js": "/neat-beats/static/js/main.69dbafb3.js",
+    "static/media/orchestra.jpg": "/neat-beats/static/media/orchestra.b88dfd65693c5ab14351.jpg",
+    "static/media/logo.png": "/neat-beats/static/media/logo.b1e3b8af5b7c9fda31bc.png",
+    "index.html": "/neat-beats/index.html",
+    "main.a1f128cd.css.map": "/neat-beats/static/css/main.a1f128cd.css.map",
+    "main.69dbafb3.js.map": "/neat-beats/static/js/main.69dbafb3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1f128cd.css",
+    "static/js/main.69dbafb3.js"
+  ]
+}
