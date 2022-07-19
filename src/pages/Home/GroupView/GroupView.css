@@ -1,9 +1,36 @@
 .groupview {
+    position: absolute;
     margin: 0;
     padding: 0 15px 0 15px;
     height: calc(100vh - 60px);
     width: calc(25% - 30px);
     background-color: rgb(200, 200, 200);
+    user-select: none;
+}
+
+.groupview > button {
+    float: right;
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+    font-size: 32px;
+    background-color: #9494ff;
+    border-color: rgb(62, 62, 62);
+    border-radius: 5px;
+}
+
+.groupview button:hover {
+    background-color: #5050ff;
+    cursor: pointer;
+}
+
+.groupview #scroll-y {
+    height: calc(100vh - 240px);
+    overflow-y: scroll;
+}
+
+.groupview #scroll-y::-webkit-scrollbar {
+    display: none;
 }
 
 .groupview #songlist {

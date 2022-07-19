@@ -1,7 +1,7 @@
 import './App.css';
 import { Switch, Route, Redirect } from "react-router-dom";
 import { useState } from 'react';
-import { UserContext } from './sharedData';
+import { UserContext, LangContext } from './sharedData';
 import Navbar from './Navbar';
 import Home from './pages/Home';
 import Explore from './pages/Explore';
@@ -11,10 +11,12 @@ import Login from './pages/Login';
 
 export default function App() {
   const [user, setUser] = useState("");
+  const [lang, setLang] = useState(0);
 
   return (
     <div className="app">
       <UserContext.Provider value={[user, setUser]}>
+      <LangContext.Provider value={[lang, setLang]}>
         {user ? 
           <>
             <Navbar />
@@ -39,6 +41,7 @@ export default function App() {
             <Login />
           </>
         }
+      </LangContext.Provider>
       </UserContext.Provider>
     </div>
     

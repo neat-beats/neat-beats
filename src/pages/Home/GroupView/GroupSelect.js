@@ -12,6 +12,7 @@ const GroupSelect = () => {
 
     const selector = useRef();
     const prompt = useRef();
+    const wrapper = useRef();
 
     useEffect(() => {
         setOpen(false);
@@ -20,12 +21,14 @@ const GroupSelect = () => {
     useEffect(() => {
         if (open) {
             selector.current.style.display = "block";
+            wrapper.current.style.display = "block";
         } else {
             selector.current.style.display = "none";
+            wrapper.current.style.display = "none";
         }
     }, [open]);
 
-    const handleCreation = (name, isPrivate) => {
+    const handleCreation = (name) => {
         for (const g of users[user]["groups"]) {
             if (name === groups[g]["name"]) {
                 return false;
@@ -33,7 +36,7 @@ const GroupSelect = () => {
         }
 
         const newGroupID = Date.now();
-        groups[newGroupID] = {name: name, members: [user], songs: [], isPrivate: isPrivate};
+        groups[newGroupID] = {name: name, members: [user], songs: []};
         users[user]["groups"].push(newGroupID);
         return true;
     }
@@ -48,6 +51,7 @@ const GroupSelect = () => {
         <div className="groupselect">
             <NewCreation type="Group" onCreation={handleCreation} displayRef={prompt} />
             <a id="opener" onClick={() => setOpen(!open)} >{groups[group]["name"]} ▼</a>
+            <div id="wrapper" ref={wrapper} onClick={() => setOpen(false)} />
             <div id="selector" ref={selector}>
                 <p>Groups</p>
                 <button onClick={openPrompt}>+</button>

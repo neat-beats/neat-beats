@@ -24,13 +24,13 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li className="left search">
-                    <Search submit={handleSubmit} placeholder="Public Search..."
+                    <Search submit={handleSubmit} placeholder="Song/Group search"
                         style={{fontSize: "17px", height:"35px", width:"200px", borderRadius: "25px", 
                         paddingLeft: "10px", border: "none"}}
                     />
                 </li>
                 <li className="left">
-                    <Link to="/message" className="link">Message</Link>
+                    <Link to="/message" className="link">Messages</Link>
                 </li>
                 <li className="left">
                     <Link to="/help" className="link">Help</Link>

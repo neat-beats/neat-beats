@@ -1,7 +1,15 @@
 .groupselect {
     padding-top: 30px;
     padding-bottom: 10px;
-    user-select: none;
+}
+
+.groupselect #wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100vh - 60px);
+    width: 100vw;
+    z-index: 1;
 }
 
 .groupselect #opener {
@@ -14,9 +22,10 @@
 
 .groupselect #selector {
     position: absolute;
+    z-index: 2;
     margin-top: 15px;
     height: 300px;
-    width: calc(25% - 70px);
+    width: calc(25vw - 70px);
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px black;
