@@ -1,0 +1,15 @@
+#language {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    right: 0;
+    bottom: 0;
+}
+
+#lang-flag {
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+    object-fit: fill;
+}

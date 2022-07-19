@@ -1,7 +1,7 @@
 import './GroupSelect.css'
 
 import { useRef, useEffect, useState, useContext } from "react";
-import { UserContext, GroupContext, users, groups } from "../../../sharedData";
+import { UserContext, GroupContext, LangContext, users, groups } from "../../../sharedData";
 
 import NewCreation from '../../../components/NewCreation'
 
@@ -9,10 +9,16 @@ const GroupSelect = () => {
     const [user, setUser] = useContext(UserContext);
     const [group, setGroup] = useContext(GroupContext);
     const [open, setOpen] = useState(false);
+    const lang = useContext(LangContext);
 
     const selector = useRef();
     const prompt = useRef();
     const wrapper = useRef();
+    const newGroupName = useRef();
+
+    const dict = {
+        group: ["Groups", "Groupos"],
+    };
 
     useEffect(() => {
         setOpen(false);
@@ -44,16 +50,17 @@ const GroupSelect = () => {
     const openPrompt = () => {
         setOpen(false);
         prompt.current.style.display = "flex";
+        newGroupName.current.focus();
     }
 
     var groupKey = 0;
     return (
         <div className="groupselect">
-            <NewCreation type="Group" onCreation={handleCreation} displayRef={prompt} />
+            <NewCreation type={0} onCreation={handleCreation} displayRef={prompt} nameInput={newGroupName} />
             <a id="opener" onClick={() => setOpen(!open)} >{groups[group]["name"]} ▼</a>
             <div id="wrapper" ref={wrapper} onClick={() => setOpen(false)} />
             <div id="selector" ref={selector}>
-                <p>Groups</p>
+                <p>{dict.group[lang]}</p>
                 <button onClick={openPrompt}>+</button>
                 <hr />
                 <ul>

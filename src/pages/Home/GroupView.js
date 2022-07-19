@@ -4,7 +4,7 @@ import { useContext, useState, useEffect, useRef, useCallback } from "react";
 import GroupSelect from './GroupView/GroupSelect';
 import Search from '../../components/Search';
 import NewCreation from '../../components/NewCreation';
-import { UserContext, GroupContext, users, groups, songs } from '../../sharedData';
+import { UserContext, GroupContext, LangContext, users, groups, songs } from '../../sharedData';
 
 const GroupView = () => {
     const [, updateState] = useState();
@@ -14,8 +14,14 @@ const GroupView = () => {
     const [group, setGroup] = useState(users[user]["groups"][0]);
     var allSongs = groups[group]["songs"];
     const [groupSongs, setGroupSongs] = useState(allSongs);
+    const lang = useContext(LangContext);
 
     const prompt = useRef();
+    const newSongName = useRef();
+
+    const dict = {
+        placeholder: ["Search for song in group", "Procura música neste grupo"],
+    };
 
     const handleSearch = (search) => {
             if (search === "") {
@@ -25,7 +31,7 @@ const GroupView = () => {
             }
     }
 
-    const handleCreation = (name) => {s
+    const handleCreation = (name) => {
         for (const s of groups[group]["songs"]) {
             if (name === songs[s]["name"]) {
                 return false;
@@ -45,6 +51,7 @@ const GroupView = () => {
 
     const openPrompt = () => {
         prompt.current.style.display = "flex";
+        newSongName.current.focus();
     }
 
     useEffect(() => {
@@ -57,10 +64,10 @@ const GroupView = () => {
     return (
         <div className="groupview">
             <GroupContext.Provider value={[group, setGroup]}>
-                <NewCreation type="Song" onCreation={handleCreation} displayRef={prompt} />
+                <NewCreation type={1} onCreation={handleCreation} displayRef={prompt} nameInput={newSongName} />
                 <GroupSelect />
                 <hr />
-                <Search placeholder="Search for song in group" activeChange={handleSearch} style={{
+                <Search placeholder={dict.placeholder[lang]} activeChange={handleSearch} style={{
                     width: "calc(100% - 70px)",
                     height: "30px",
                     marginTop: "20px",
