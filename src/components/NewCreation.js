@@ -10,7 +10,7 @@ const NewCreation = ({ type, onCreation, displayRef, nameInput }) => {
     const dict = {
         err: ["This name is already in use.", "Este nome já está sendo usado."],
         name: ["New Song Name: ", "Nome da Nova Música: "],
-        group: ["New Group Name: ", "Nome do Novo Groupo: "],
+        group: ["New Group Name: ", "Nome do Novo Grupo: "],
         create: ["Create", "Cria"],
     };
 

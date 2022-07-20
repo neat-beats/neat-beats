@@ -17,7 +17,7 @@ const GroupSelect = () => {
     const newGroupName = useRef();
 
     const dict = {
-        group: ["Groups", "Groupos"],
+        group: ["Groups", "Grupos"],
     };
 
     useEffect(() => {

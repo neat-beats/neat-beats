@@ -4,8 +4,9 @@ import { useState } from 'react';
 import { UserContext, LangContext } from './sharedData';
 import Navbar from './Navbar';
 import Home from './pages/Home';
-import Message from './pages/Message';
+import Messages from './pages/Messages';
 import Help from './pages/Help';
+import Explore from './pages/Explore';
 import Login from './pages/Login';
 import english from "./images/english.webp";
 import portuguese from "./images/portuguese.png";
@@ -34,11 +35,14 @@ export default function App() {
               <Route exact path="/">
                 <Home />
               </Route>
-              <Route path="/message">
-                <Message />
+              <Route path="/messages">
+                <Messages />
               </Route>
               <Route path="/help">
                 <Help />
+              </Route>
+              <Route path="/explore">
+                <Explore />
               </Route>
               <Route path="/access">
                 <Redirect to="/" />

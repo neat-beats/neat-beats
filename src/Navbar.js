@@ -11,7 +11,7 @@ const Navbar = () => {
     const lang = useContext(LangContext);
 
     const dict = {
-        search: ["Song/Group search", "Procura Música/Groupo"],
+        search: ["Song/Group search", "Procura Música/Grupo"],
         messages: ["Messages", "Mensagens"],
         help: ["Help", "Ajuda"],
         signout: ["Logout", "Sai Do Usuário"],
@@ -38,7 +38,7 @@ const Navbar = () => {
                     />
                 </li>
                 <li className="left">
-                    <Link to="/message" className="link">{dict.messages[lang]}</Link>
+                    <Link to="/messages" className="link">{dict.messages[lang]}</Link>
                 </li>
                 <li className="left">
                     <Link to="/help" className="link">{dict.help[lang]}</Link>
