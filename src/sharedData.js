@@ -6,12 +6,26 @@ export const LangContext = createContext();
 
 export const messages = {
     1: {
-        groups: [1, 2],
+        groups: [1, 3],
         texts: [
             [1, "Hey how's it going??"],
-            [2, "I'm great! How about you?"],
-            [2, "Isn't it so cool to be texting on NeatBeats?"],
-            [1, "yeah fr! Talk to you later!"],
+            [3, "I'm great! How about you?"],
+            [3, "Isn't it so cool to be texting on NeatBeats?"],
+            [1, "yeah fr! Talk to you later?"],
+            [3, "yup"],
+            [1, "cool"],
+            [1, "Hey how's it going??"],
+            [3, "I'm great! How about you?"],
+            [3, "Isn't it so cool to be texting on NeatBeats?"],
+            [1, "yeah fr! Talk to you later?"],
+            [3, "yup"],
+            [1, "cool"],
+            [1, "Hey how's it going??"],
+            [3, "I'm great! How about you?"],
+            [3, "Isn't it so cool to be texting on NeatBeats?"],
+            [1, "yeah fr! Talk to you later?"],
+            [3, "yup"],
+            [1, "cool"],
         ],
     }
 }
@@ -47,7 +61,7 @@ export const groups = {
             1, 2
         ],
         messages: [
-
+            [3, 1],
         ],
     },
     2: {
@@ -56,10 +70,16 @@ export const groups = {
         songs: [
             3, 4, 5
         ],
-        messages: [
-
-        ],
+        messages: [],
     },
+    3: {
+        name: "q",
+        members: ["q"],
+        songs: [],
+        messages: [
+            [1, 1],
+        ]
+    }
 }
 
 export const users = {
@@ -69,4 +89,10 @@ export const users = {
             1, 2
         ],
     },
+    "q": {
+        password: "q",
+        groups: [
+            3
+        ],
+    }
 }

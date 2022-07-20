@@ -1,17 +1,115 @@
 .messages {
     position: absolute;
+    float: left;
     margin: 0;
-    padding: 0;
+    padding: 20px 0 0 0;
+    overflow-x: clip;
 }
 
 .messages .endpointpicker {
     margin: 0;
     padding: 0;
-    position: absolute;
-    height: calc(100vh - 60px);
-    width: 20vw;
+    float: left;
+    height: calc(100vh - 80px);
+    width: 300px;
+    text-align: center;
 }
 
-.messages .endpointpicker h1 {
+.messages .endpointpicker li:hover {
+    cursor: pointer;
+}
+
+.messages #picker {
+    font-size: 20px;
+}
+
+h1 {
     margin: 0;
+    user-select: none;
+}
+
+.messages #texts {
+    margin: 0;
+    padding: 0;
+    float: left;
+    height: calc(100vh - 80px);
+    width: calc(100vw - 600px);
+    text-align: center;
+    position: relative;
+}
+
+.messages ul {
+    list-style: none;
+    padding: 0;
+}
+
+.messages #msg {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    bottom: 20%;
+    left: 5%;
+    width: 90%;
+    height: 67%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.messages #msg::-webkit-scrollbar {
+    display: none;
+}
+
+.messages .message {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.messages #msg p {
+    max-width: 60%;
+    display: inline;
+    margin: 0;
+    padding: 5px 10px 7px 10px;
+    border-radius: 15px;
+}
+
+.messages #msg p[sent="0"] {
+    text-align: left;
+    float: right;
+    background-color: rgb(71, 71, 255);
+    color: rgb(238, 238, 238);
+    border-bottom-right-radius: 0;
+}
+
+.messages #msg p[sent="1"] {
+    text-align: left;
+    float: left;
+    background-color: rgb(183, 183, 183);
+    border-bottom-left-radius: 0;
+}
+
+.messages #send {
+    position: absolute;
+    display: flex;
+    justify-items: center;
+    bottom: 10%;
+    left: 25%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.messages #send input {
+    height: 31px;
+    margin: 0;
+    padding: 0 0 0 5px;
+    width: 50%;
+    font-size: 20px;
+}
+
+.messages #send button {
+    background-color: rgb(71, 71, 255);
+    padding: 5px 5px 0 5px;
+    margin: 0;
+    border-radius: 5px;
 }

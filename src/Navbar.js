@@ -12,7 +12,7 @@ const Navbar = () => {
 
     const dict = {
         search: ["Song/Group search", "Procura Música/Grupo"],
-        messages: ["Messages", "Mensagens"],
+        messages: ["Messages", "Mensagems"],
         help: ["Help", "Ajuda"],
         signout: ["Logout", "Sai Do Usuário"],
     };
