@@ -14,6 +14,7 @@ const Messages = () => {
     const [target, setTarget] = useState();
     const [newMessage, setNewMessage] = useState("");
     const [messageDisplay, setMessageDisplay] = useState();
+    const [messageDisabled, setMessageDisabled] = useState();
 
     const newMessageInput = useRef();
     const messageRef = useRef();
@@ -25,8 +26,10 @@ const Messages = () => {
 
     const loadMessages = () => {
         if (target === null) {
+            setMessageDisabled(true);
             return <></>;
         }
+        setMessageDisabled(false);
 
         let msgList = groups[origin].messages;
         let msgs = [];
@@ -77,6 +80,10 @@ const Messages = () => {
         messageRef.current.scrollTop = messageRef.current.scrollHeight;
     }, [messageDisplay])
 
+    useEffect(() => {
+        if (!messageDisabled) newMessageInput.current.focus();
+    }, [messageDisabled]);
+
     return (
         <div className="messages">
             <EndpointPicker id="as" type={0} pick={[origin, setOrigin]} />
@@ -87,8 +94,8 @@ const Messages = () => {
                     {messageDisplay}
                 </div>
                 <form id="send" onSubmit={handleNewMessage}>
-                    <input type="text" ref={newMessageInput} onChange={(e) => setNewMessage(e.target.value)} placeholder={dict.placeholder[lang]} />
-                    <button type="submit"><Icon icon="system-uicons:paper-plane-alt" color="white" width="22" height="22" /></button>
+                    <input type="text" ref={newMessageInput} disabled={messageDisabled} onChange={(e) => setNewMessage(e.target.value)} placeholder={dict.placeholder[lang]} />
+                    <button type="submit" disabled={messageDisabled}><Icon icon="system-uicons:paper-plane-alt" color="white" width="22" height="22" /></button>
                 </form>
             </div>
         </div>

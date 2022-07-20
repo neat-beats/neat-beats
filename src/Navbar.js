@@ -45,7 +45,7 @@ const Navbar = () => {
                 </li>
 
                 <li className="right">
-                    <Link onClick={() => setUser("")} className="link">{dict.signout[lang]}</Link>
+                    <Link to="/" onClick={() => setUser("")} className="link">{dict.signout[lang]}</Link>
                 </li>
             </ul>
         </nav>

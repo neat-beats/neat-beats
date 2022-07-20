@@ -2,7 +2,7 @@
     position: absolute;
     float: left;
     margin: 0;
-    padding: 20px 0 0 0;
+    padding: 0;
     overflow-x: clip;
 }
 
@@ -10,9 +10,10 @@
     margin: 0;
     padding: 0;
     float: left;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 60px);
     width: 300px;
     text-align: center;
+    background-color: rgb(200, 200, 200);
 }
 
 .messages .endpointpicker li:hover {
@@ -32,7 +33,7 @@ h1 {
     margin: 0;
     padding: 0;
     float: left;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 60px);
     width: calc(100vw - 600px);
     text-align: center;
     position: relative;
@@ -49,14 +50,23 @@ h1 {
     padding: 0;
     bottom: 20%;
     left: 5%;
-    width: 90%;
+    width: calc(90% - 5px);
     height: 67%;
     overflow-x: hidden;
     overflow-y: scroll;
 }
 
 .messages #msg::-webkit-scrollbar {
+    width: 5px;
+}
+
+.messages #msg::-webkit-scrollbar-track {
     display: none;
+}
+
+.messages #msg::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: rgb(200, 200, 200);
 }
 
 .messages .message {
@@ -76,6 +86,7 @@ h1 {
 .messages #msg p[sent="0"] {
     text-align: left;
     float: right;
+    margin-right: 10px;
     background-color: rgb(71, 71, 255);
     color: rgb(238, 238, 238);
     border-bottom-right-radius: 0;
