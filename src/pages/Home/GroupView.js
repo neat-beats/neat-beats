@@ -4,13 +4,14 @@ import { useContext, useState, useEffect, useRef, useCallback } from "react";
 import GroupSelect from './GroupView/GroupSelect';
 import Search from '../../components/Search';
 import NewCreation from '../../components/NewCreation';
-import { UserContext, GroupContext, LangContext, users, groups, songs } from '../../sharedData';
+import { UserContext, GroupContext, LangContext, SongContext, users, groups, songs } from '../../sharedData';
 
 const GroupView = () => {
     const [, updateState] = useState();
     const forceUpdate = useCallback(() => updateState({}), []);
 
     const [user, setUser] = useContext(UserContext);
+    const [song, setSong] = useContext(SongContext);
     const [group, setGroup] = useState(users[user]["groups"][0]);
     var allSongs = groups[group]["songs"];
     const [groupSongs, setGroupSongs] = useState(allSongs);
@@ -39,14 +40,14 @@ const GroupView = () => {
         }
 
         const newSongID = Date.now();
-        songs[newSongID] = {name: name, group: group};
+        songs[newSongID] = {name: name, src: "", group: group, acceptedContributions: 0, contributions: 0};
         groups[group]["songs"].push(newSongID);
         forceUpdate();
         return true;
     }
 
     const handleSongPick = (songPick) => {
-        alert("Picked song " + songPick + " (not implemented yet)");
+        setSong(songPick);
     }
 
     const openPrompt = () => {

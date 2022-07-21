@@ -3,6 +3,7 @@ import { createContext } from "react";
 export const UserContext = createContext();
 export const GroupContext = createContext();
 export const LangContext = createContext();
+export const SongContext = createContext();
 
 export const messages = {
     1: {
@@ -32,25 +33,12 @@ export const messages = {
 
 export const songs = {
     1: {
-        name: "Dancing King",
+        name: "Sonatina in Your Face",
+        src: require("./songs/Sonatina_in_ur_face.mp3"),
         group: 1,
+        acceptedContributions: 6,
+        contributions: 2,
     },
-    2: {
-        name: "Bohemian Rap City",
-        group: 1,
-    },
-    3: {
-        name: "Stereoactive",
-        group: 2,
-    },
-    4: {
-        name: "Lightning",
-        group: 2,
-    },
-    5: {
-        name: "Sucker for Spain",
-        group: 2,
-    }
 }
 
 export const groups = {
@@ -58,7 +46,7 @@ export const groups = {
         name: "w",
         members: ["w"],
         songs: [
-            1, 2
+            1
         ],
         messages: [
             [3, 1],
@@ -67,9 +55,7 @@ export const groups = {
     2: {
         name: "Imagine Wagons",
         members: ["w"],
-        songs: [
-            3, 4, 5
-        ],
+        songs: [],
         messages: [],
     },
     3: {

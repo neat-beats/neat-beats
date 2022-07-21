@@ -13,4 +13,5 @@
     right: 100px;
     bottom: 0;
     object-fit: fill;
+    z-index: 10;
 }

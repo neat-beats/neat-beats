@@ -6,7 +6,6 @@ import Navbar from './Navbar';
 import Home from './pages/Home';
 import Messages from './pages/Messages';
 import Help from './pages/Help';
-import Explore from './pages/Explore';
 import Login from './pages/Login';
 import english from "./images/english.webp";
 import portuguese from "./images/portuguese.png";
@@ -40,9 +39,6 @@ export default function App() {
               </Route>
               <Route path="/help">
                 <Help />
-              </Route>
-              <Route path="/explore">
-                <Explore />
               </Route>
               <Route path="/access">
                 <Redirect to="/" />

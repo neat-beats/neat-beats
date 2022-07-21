@@ -11,14 +11,14 @@ const Navbar = () => {
     const lang = useContext(LangContext);
 
     const dict = {
-        search: ["Song/Group search", "Procura Música/Grupo"],
+        search: ["Group search", "Procura Grupo"],
         messages: ["Messages", "Mensagems"],
         help: ["Help", "Ajuda"],
         signout: ["Logout", "Sai Do Usuário"],
     };
 
     const handleSubmit = (search) => {
-        alert(search);
+        alert("I couldn't finish this.");
     }
 
     return (
