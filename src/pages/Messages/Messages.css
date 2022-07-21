@@ -34,7 +34,7 @@ h1 {
     padding: 0;
     float: left;
     height: calc(100vh - 60px);
-    width: calc(100vw - 600px);
+    width: calc(100vw - 620px);
     text-align: center;
     position: relative;
 }

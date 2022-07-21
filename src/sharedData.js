@@ -28,6 +28,10 @@ export const messages = {
             [3, "yup"],
             [1, "cool"],
         ],
+    },
+    2: {
+        groups: [2, 3],
+        texts: [],
     }
 }
 
@@ -56,7 +60,9 @@ export const groups = {
         name: "Imagine Wagons",
         members: ["w"],
         songs: [],
-        messages: [],
+        messages: [
+            [3, 2],
+        ],
     },
     3: {
         name: "q",
@@ -64,6 +70,7 @@ export const groups = {
         songs: [],
         messages: [
             [1, 1],
+            [2, 2],
         ]
     }
 }

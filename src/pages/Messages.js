@@ -69,6 +69,7 @@ const Messages = () => {
         let a = groups[origin].messages;
         if (a.length !== 0) {
             setTarget(groups[origin].messages[0][0]);
+            setMessageDisplay(loadMessages());
         } else setTarget(null);
     }, [origin]);
 
