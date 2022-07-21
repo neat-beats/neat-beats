@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/neat-beats/static/css/main.a1f128cd.css",
-    "main.js": "/neat-beats/static/js/main.69dbafb3.js",
+    "main.css": "/neat-beats/static/css/main.76125d2c.css",
+    "main.js": "/neat-beats/static/js/main.79e64567.js",
     "static/media/orchestra.jpg": "/neat-beats/static/media/orchestra.b88dfd65693c5ab14351.jpg",
+    "static/media/Sonatina_in_ur_face.mp3": "/neat-beats/static/media/Sonatina_in_ur_face.5e125a4ed531ae6d456c.mp3",
+    "static/media/portuguese.png": "/neat-beats/static/media/portuguese.fab94bcf640701190b91.png",
+    "static/media/english.webp": "/neat-beats/static/media/english.449bbbc091b5376fe377.webp",
     "static/media/logo.png": "/neat-beats/static/media/logo.b1e3b8af5b7c9fda31bc.png",
     "index.html": "/neat-beats/index.html",
-    "main.a1f128cd.css.map": "/neat-beats/static/css/main.a1f128cd.css.map",
-    "main.69dbafb3.js.map": "/neat-beats/static/js/main.69dbafb3.js.map"
+    "main.76125d2c.css.map": "/neat-beats/static/css/main.76125d2c.css.map",
+    "main.79e64567.js.map": "/neat-beats/static/js/main.79e64567.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1f128cd.css",
-    "static/js/main.69dbafb3.js"
+    "static/css/main.76125d2c.css",
+    "static/js/main.79e64567.js"
   ]
 }
